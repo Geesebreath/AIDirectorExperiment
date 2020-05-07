@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -180,6 +181,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -272,6 +274,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -359,8 +362,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 45
@@ -476,8 +477,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &240372436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,8 +495,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -628,6 +625,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -723,11 +721,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2421939063648181345, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Pickup (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -766,7 +759,7 @@ PrefabInstance:
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
@@ -783,6 +776,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2421939063648181345, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8884851387431422239, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
       propertyPath: m_Layer
@@ -797,11 +795,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2421939063648181345, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Pickup (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -840,7 +833,7 @@ PrefabInstance:
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
@@ -856,6 +849,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421939063648181345, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a57c7e8b4d35f40b0a4593175aa4e0, type: 3}
@@ -952,8 +950,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &457413185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,8 +968,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1052,6 +1046,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1201,6 +1196,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1293,6 +1289,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1385,6 +1382,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1442,8 +1440,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -1563,8 +1562,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -1594,11 +1591,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2421939063648181345, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Pickup (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1637,7 +1629,7 @@ PrefabInstance:
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
@@ -1653,6 +1645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421939063648181345, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a57c7e8b4d35f40b0a4593175aa4e0, type: 3}
@@ -1702,6 +1699,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1808,6 +1806,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1931,8 +1930,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -2011,6 +2008,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2238,6 +2236,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2334,7 +2333,7 @@ PrefabInstance:
     - target: {fileID: 3590187086287813197, guid: bf4f02c539205564aa09b917c77514bc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3590187086287813197, guid: bf4f02c539205564aa09b917c77514bc,
         type: 3}
@@ -2399,6 +2398,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2505,6 +2505,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2592,8 +2593,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 7f91e340e442d7a4e8682e1678a765ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2658,6 +2657,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2759,8 +2759,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -2790,11 +2788,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2421939063648181345, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Pickup
-      objectReference: {fileID: 0}
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2850,6 +2843,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2421939063648181345, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a57c7e8b4d35f40b0a4593175aa4e0, type: 3}
 --- !u!1 &1802536342
@@ -2882,7 +2880,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1802536344
 MonoBehaviour:
@@ -2893,21 +2891,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1802536342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e01653bf49a0c324cb686848bc13a6d0, type: 3}
+  m_Script: {fileID: 11500000, guid: eb20264f6795faf4e9580006a4fadf3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   incrementTime: 0
-  maxIncrementTime: 15
-  maxTime: 10
-  minTime: 3
+  maxIncrementTime: 0
+  maxTime: 0
+  minTime: 0
   spawnTime: 0
   currentTime: 0
   second: 0
-  pointIncrement: 1
-  pointIncrementIncrement: 0.5
+  pointIncrement: 0
+  pointIncrementIncrement: 0
   points: 0
   colCost: 0
-  hunCost: 5
+  hunCost: 0
   floor: {fileID: 1437694964}
 --- !u!114 &1802536345
 MonoBehaviour:
@@ -2950,11 +2948,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2421939063648181345, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Pickup (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3009,6 +3002,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421939063648181345, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a57c7e8b4d35f40b0a4593175aa4e0, type: 3}
@@ -3072,6 +3070,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3401,6 +3400,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3335956576098043429, guid: 34306c452c5af2d4d8055a227c5d65d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4247044336641779730, guid: 34306c452c5af2d4d8055a227c5d65d3,
         type: 3}
       propertyPath: movementSpeed
@@ -3411,20 +3415,15 @@ PrefabInstance:
       propertyPath: damageValue
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 3335956576098043429, guid: 34306c452c5af2d4d8055a227c5d65d3,
+    - target: {fileID: 5948445328506863870, guid: 34306c452c5af2d4d8055a227c5d65d3,
         type: 3}
-      propertyPath: m_Layer
-      value: 9
+      propertyPath: maxHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8683689685256423904, guid: 34306c452c5af2d4d8055a227c5d65d3,
         type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5948445328506863870, guid: 34306c452c5af2d4d8055a227c5d65d3,
-        type: 3}
-      propertyPath: maxHealth
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34306c452c5af2d4d8055a227c5d65d3, type: 3}
@@ -3435,10 +3434,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 295570708}
     m_Modifications:
+    - target: {fileID: 1281513801842314385, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281513801842314385, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481201226681513679, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481201226681513679, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2616960842429021611, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
         type: 3}
       propertyPath: m_Name
       value: Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359086402168856041, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359086402168856041, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982106648537884844, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982106648537884844, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5522596174283924919, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
         type: 3}
@@ -3524,46 +3563,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.55216944
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281513801842314385, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281513801842314385, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982106648537884844, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982106648537884844, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481201226681513679, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481201226681513679, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3359086402168856041, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3359086402168856041, guid: 732b42d8e93cb104ab5ba0d4f7c9276c,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 732b42d8e93cb104ab5ba0d4f7c9276c, type: 3}
