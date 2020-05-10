@@ -36,7 +36,7 @@ public class HunterAI : EnemyAI
         base.Update();
     }
 
-    protected override void FixedUpdate()
+    protected void FixedUpdate()
     {
         Collider[] col;
         col = Physics.OverlapSphere(transform.position, detectionRadius);
@@ -51,7 +51,6 @@ public class HunterAI : EnemyAI
                 GoTo(target.transform.position+target.transform.forward);
             }
         }
-        base.FixedUpdate();
     }
 
     protected override void DoAction()

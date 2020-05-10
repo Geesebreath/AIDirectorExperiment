@@ -577,7 +577,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294361111
 GameObject:
@@ -712,7 +712,7 @@ Transform:
   - {fileID: 135613510}
   - {fileID: 1907264428}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &361140256
 PrefabInstance:
@@ -1122,7 +1122,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &492827488
 MonoBehaviour:
@@ -1599,7 +1599,7 @@ PrefabInstance:
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
@@ -2169,7 +2169,7 @@ RectTransform:
   - {fileID: 929561059}
   - {fileID: 2132731385}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2880,7 +2880,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1802536344
 MonoBehaviour:
@@ -2894,18 +2894,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb20264f6795faf4e9580006a4fadf3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incrementTime: 0
-  maxIncrementTime: 0
-  maxTime: 0
-  minTime: 0
-  spawnTime: 0
-  currentTime: 0
-  second: 0
-  pointIncrement: 0
-  pointIncrementIncrement: 0
+  pointIncrement: 0.5
+  pointIncrementIncrement: 0.2
   points: 0
-  colCost: 0
-  hunCost: 0
+  currentPointIncrementTime: 5
+  pointIncrementTime: 30
+  maximumSpawnTime: 20
+  minimumSpawnTime: 5
+  currentSpawnTime: 1
+  collectorCost: 3
+  otherEnemyCost: 5
   floor: {fileID: 1437694964}
 --- !u!114 &1802536345
 MonoBehaviour:
@@ -2919,8 +2917,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c6097d8aaa6244ea43daf36c93bcfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectorPool: []
-  hunterPool: []
+  collectorPool:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hunterPool:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   seekerPool: []
   poolAmount: 50
   collectorPrefab: {fileID: 9001815769122855102, guid: 3b77bb31d875a224ea203724a7957eeb,
@@ -2986,7 +3084,7 @@ PrefabInstance:
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1911780162353428294, guid: 97a57c7e8b4d35f40b0a4593175aa4e0,
         type: 3}

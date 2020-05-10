@@ -12,7 +12,7 @@ public class SeekerAI : EnemyAI
         base.Update();
     }
 
-    protected override void FixedUpdate()
+    protected void FixedUpdate()
     {
         //Check for player
         int lMask = 9;
@@ -55,8 +55,6 @@ public class SeekerAI : EnemyAI
             //Actions for finding Pickup
             //Debug.Log("Found Battery at " + foundCols[0].gameObject.transform.position);
         }
-
-        base.FixedUpdate();
     }
 
 }

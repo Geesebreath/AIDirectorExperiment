@@ -140,17 +140,4 @@ public class EnemyAI : MonoBehaviour
         savedDestination = destination;
         Debug.Log(gameObject.name + " going to " + savedDestination);
     }
-
-    protected virtual void FixedUpdate()
-    {
-        switch (state)
-        {
-            case State.Wander:
-                break;
-            case State.GoTo:
-                break;
-            case State.Flee:
-                break;
-        }
-    }
 }

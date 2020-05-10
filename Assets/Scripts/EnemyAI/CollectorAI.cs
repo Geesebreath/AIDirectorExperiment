@@ -7,9 +7,10 @@ using static EnemyAI;
 public class CollectorAI : EnemyAI
 {
 	public GameObject battery = null, target = null;
+
 	GameObject goal;
-	public float detectionRadius;
-	// Start is called before the first frame update
+	public float detectionRadius = 2;
+
 	public enum MyState
 	{
 		Default,
@@ -34,29 +35,17 @@ public class CollectorAI : EnemyAI
 		{
 			GoTo(goal.transform.position);
 		}
-        if(state == State.Flee)
-        {
-            agent.speed = moveSpeed * 2;
-        }
-        else
-        {
-            agent.speed = moveSpeed;
-        }
+		if (state == State.Flee)
+		{
+			agent.speed = moveSpeed * 2;
+		}
+		else
+		{
+			agent.speed = moveSpeed;
+		}
 
-        switch (state)
-        {
-            case State.Wander:
-                
-                break;
-            case State.GoTo:
-                break;
-            case State.Flee:
-                break;
-            case State.Extra:
-                break;
-        }
 
-        base.Update();
+		base.Update();
 		if (state == State.Extra)
 		{
 			switch (myState)
@@ -71,53 +60,55 @@ public class CollectorAI : EnemyAI
 			}
 		}
 
-    }
+	}
 
-    protected override void FixedUpdate()
+	protected void FixedUpdate()
 	{
-		Collider[] col;
-		if (battery == null)
-		{//If ur not carrying a battery, check if there is a battery in your detection sphere and go to the closest one.
-			col = Physics.OverlapSphere(transform.position, detectionRadius, LayerMask.GetMask("Pickup"));
+		Collider[] colliders;
 
-			NavMeshHit nmHit;
-			int layer = 0;
-			layer = layer >> 3;
-			if (col.Length >= 1)
-			{
-				//Debug.Log(col[0].gameObject.transform.parent.name);
-				float dis = 10000, closest = 1000;
-				for (int i = 0; i < col.Length; i++)
+		colliders = Physics.OverlapSphere(transform.position, detectionRadius);
+		fleeObject = null;
+		float dis = 10000, closest = 1000;
+		for (int i = 0; i < colliders.Length; i++)
+		{
+			Collider c = colliders[i];
+			if (c.gameObject.tag == "Player")
+			{// Check if player is nearby
+				fleeObject = c.gameObject;
+				state = State.Flee;
+				i = colliders.Length;
+			}
+			else if (battery != null && c.gameObject.tag == "Pickup")
+			{// If player is not nearby, check if battery is nearby
+				
+				//int layer = 0;
+				//layer = layer >> 3;
+				dis = Vector3.Distance(transform.position, colliders[i].gameObject.transform.position);
+				if (dis < closest)
 				{
-					dis = Vector3.Distance(transform.position, col[i].gameObject.transform.position);
-					if (dis < closest)
+					NavMeshHit nmHit;
+					if (NavMesh.SamplePosition(colliders[i].gameObject.transform.position, out nmHit, detectionRadius / 2, NavMesh.AllAreas))
 					{
-						if (NavMesh.SamplePosition(col[i].gameObject.transform.position, out nmHit, detectionRadius / 2, NavMesh.AllAreas))
-						{
-							GoTo(nmHit.position);
-						}
+						GoTo(nmHit.position);
 					}
 				}
 			}
-			else
-			{
-				//goToEnabled = false;
-			}
 		}
-
-
-		col = Physics.OverlapSphere(transform.position, detectionRadius);
-		fleeObject = null;
-		foreach (Collider c in col)
-		{
-			if (c.gameObject.tag == "Player")
-			{
-				fleeObject = c.gameObject;
-				state = State.Flee;
-			}
-		}
-		base.FixedUpdate();
 	}
+
+
+	//if (battery == null)
+	//{//If not carrying a battery, check if there is a battery in your detection sphere and go to the closest one.
+	//	colliders = Physics.OverlapSphere(transform.position, detectionRadius, LayerMask.GetMask("Pickup"));
+
+
+	//	else
+	//	{
+	//		//goToEnabled = false;
+	//	}
+	//}
+
+
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.layer == 8)
@@ -156,19 +147,19 @@ public class CollectorAI : EnemyAI
 		bool removed = false;
 		if (battery != null)
 		{
-            battery.transform.parent = null;
-            battery.transform.rotation = Quaternion.Euler(90, 0, 0);
-            battery.transform.position = transform.position;
-            battery.layer = 8;
-            foreach (Transform t in battery.transform)
-            {
-                t.gameObject.layer = 8;
-            }
-            battery = null;
-            removed = true;
+			battery.transform.parent = null;
+			battery.transform.rotation = Quaternion.Euler(90, 0, 0);
+			battery.transform.position = transform.position;
+			battery.layer = 8;
+			foreach (Transform t in battery.transform)
+			{
+				t.gameObject.layer = 8;
+			}
+			battery = null;
+			removed = true;
 		}
 		return removed;
 	}
 
-    
+
 }
